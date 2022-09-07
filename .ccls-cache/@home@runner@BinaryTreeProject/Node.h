@@ -7,11 +7,13 @@ Class: Node of binary tree
 ******************************************/
 class Node
 {
-private:
+public:
     int value;
+private:
     Node *parent, *left, *right;
 public:
     Node(int, Node*);
+    Node * get_child(int);
     bool connect_child(Node*);
     Node * disconnect_child(int);
     
@@ -25,10 +27,24 @@ Node::Node(int val, Node * parent = nullptr)
 {
     this->value = val;
     this->parent = parent;
+    this->left = nullptr;
+    this->right = nullptr;
 }
 
 
 // Other Methods definitions
+
+/*
+ Get pointer to child node (left or right) 
+ -> what childe (LEFT_CHILD or RIGHT_CHILD) 
+ <- pointer to the child
+*/
+Node * Node::get_child(int left_or_right)
+{
+    if (left_or_right == CHILD_LEFT) return this->left;
+    else return this->right;
+}
+
 
 /* 
  Connect child node to this node
