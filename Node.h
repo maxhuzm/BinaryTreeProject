@@ -21,8 +21,10 @@ public:
 /*****************************************/
 
 
-// Constructors definitions
-
+/*
+ Constructor
+ -> value of the node and pointer to parent
+*/
 Node::Node(int val, Node * parent = nullptr)
 {
     this->value = val;
@@ -32,8 +34,6 @@ Node::Node(int val, Node * parent = nullptr)
 }
 
 
-// Other Methods definitions
-
 /*
  Get pointer to child node (left or right) 
  -> what childe (LEFT_CHILD or RIGHT_CHILD) 
@@ -41,7 +41,7 @@ Node::Node(int val, Node * parent = nullptr)
 */
 Node * Node::get_child(int left_or_right)
 {
-    if (left_or_right == CHILD_LEFT) return this->left;
+    if (left_or_right == LEFT_CHILD) return this->left;
     else return this->right;
 }
 
