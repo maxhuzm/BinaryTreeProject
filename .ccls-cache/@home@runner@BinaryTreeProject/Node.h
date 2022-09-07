@@ -9,7 +9,6 @@ class Node
 {
 public:
     int value;
-private:
     Node *parent, *left, *right;
 public:
     Node(int, Node*);
